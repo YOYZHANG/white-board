@@ -7,7 +7,36 @@
     <title>white-board</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+    <div id="app" class="w-screen h-screen">
+      <div>
+        <h1><a href="" >WhiteBoard</a></h1>
+
+        <div>
+          <button id="undo" aria-label="Undo" title="undo">↩</button>
+          <button id="redo" aria-label="Redo" title="redo">↪</button>
+          <button id="clear" aria-label="clear" title="clear">🗑</button>
+        </div>
+
+        <div>
+          <button id="draw" aria-label="draw" title="draw">✏</button>
+          <button id="pen" aria-label="pen" title="pen">✒</button>
+          <button id="line" aria-label="line" title="line">/</button>
+          <button id="arrow" aria-label="arrow" title="arrow">↗</button>
+          <button id="rect" aria-label="rect" title="rect">⃞</button>
+          <button id="ellipse" aria-label="ellipse" title="ellipse">⭕</button>
+          <button id="eraser" aria-label="eraser" title="eraser">🧹</button>
+        </div>
+
+        <div>
+          <button id="downloads" title="Downloads">📥</button>
+        </div>
+
+        <svg id="svg" class="w-full h-full z-10"></svg>
+
+
+      </div>
+      <svg></svg>
+    </div>
+    <script type="module" src="./src/main.ts"></script>
   </body>
 </html>

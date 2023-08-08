@@ -2,11 +2,13 @@
   "name": "board",
   "version": "1.0.0",
   "description": "",
+  "author": "zhangxiaoqian",
+  "license": "ISC",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
     }
   },
   "main": "dist/index.js",
@@ -17,7 +19,5 @@
   "scripts": {
     "dev": "npm run build --watch",
     "build": "tsup src/index.ts --format esm,cjs,iife --dts --clean"
-  },
-  "author": "zhangxiaoqian",
-  "license": "ISC"
+  }
 }

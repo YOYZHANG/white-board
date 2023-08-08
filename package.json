@@ -3,16 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "play:dev": "vite",
-    "play:build": "vite",
-    "board:dev": "vite build",
-    "board:build": "vite build",
+    "play:dev": "pnpm -C playground run dev --open",
+    "play:build": "pnpm -C playground run build",
+    "board:dev": "pnpm run -r --parallel --filter=./packages/* dev",
+    "board:build": "pnpm run -r --filter=./packages/* build",
     "lint": "eslint ."
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.4",
-    "@ecomfe/eslint-config": "^7.4.0",
-    "@iconify-json/carbon": "^1.1.17",
     "@typescript-eslint/eslint-plugin": "^5.50.0",
     "@typescript-eslint/parser": "^5.59.8",
     "eslint": "^8.42.0",

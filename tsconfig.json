@@ -21,7 +21,7 @@
     "noUnusedLocals": true,
     "paths": {
       "board": ["./packages/core/src/index.ts"]
-    } 
+    }
   },
   "exclude": ["**/dist", "node_modules"]
 }
