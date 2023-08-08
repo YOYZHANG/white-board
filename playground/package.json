@@ -1,0 +1,14 @@
+{
+  "name": "playground",
+  "version": "1.0.0",
+  "description": "",
+  "private": "true",
+  "scripts": {
+    "dev": "vite --port 3333 --open",
+    "build": "cross-env NODE_ENV=production vite"
+  },
+  "devDependencies": {
+    "unocss": "^0.53.0",
+    "vite": "^4.3.9"
+  }
+}

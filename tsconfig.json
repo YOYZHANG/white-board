@@ -19,12 +19,9 @@
     "noPropertyAccessFromIndexSignature": true,
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
-    "types": [
-      "vitest",
-      "vite/client",
-      "vue/ref-macros",
-      "unplugin-vue-router/client"
-    ]
+    "paths": {
+      "board": ["./packages/core/src/index.ts"]
+    } 
   },
-  "include": ["src", "test"]
+  "exclude": ["**/dist", "node_modules"]
 }

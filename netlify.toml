@@ -3,8 +3,8 @@
   NPM_FLAGS="--prefix=/"
 
 [build]
-  publish = "dist"
-  command = "pnpm run build"
+  publish = "playground/dist"
+  command = "pnpm run play:build"
 
 [[redirects]]
   from = "/*"
