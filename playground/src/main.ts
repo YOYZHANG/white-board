@@ -1,5 +1,5 @@
 import 'uno.css'
-import { createBoard } from '../../packages/core/src/board'
+import { createBoard } from '@fycosmos/board'
 import type { Brush, DrawingMode } from '../../packages/core/src/types'
 
 const board = createBoard({

@@ -10,5 +10,8 @@
     "pnpm": "8.6.12",
     "unocss": "^0.53.0",
     "vite": "^4.3.9"
+  },
+  "dependencies": {
+    "@fycosmos/board": "workspace:1.0.1"
   }
 }
