@@ -15,7 +15,7 @@ export default class LineModel extends BaseModel<SVGLineElement> {
   }
 
   override onMove(point: Point) {
-    if (!this.el)
+    if (!this.el || !this.start)
       return
 
     this.el.setAttribute('x1', `${this.start.x}`)
@@ -31,6 +31,9 @@ export default class LineModel extends BaseModel<SVGLineElement> {
     this.el = null
 
     if (!path)
+      return false
+
+    if (path.getTotalLength() < 5)
       return false
 
     console.log('onend', point)

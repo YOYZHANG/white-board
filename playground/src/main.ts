@@ -27,12 +27,12 @@ function getModel(id: string, mode: DrawingMode, arrowEnd = false): ModelResult 
   }
 }
 const models = [
-  // getModel('draw', 'draw'),
+  getModel('draw', 'draw'),
   // getModel('pen', 'pen'),
   getModel('line', 'line'),
   // getModel('arrow', 'arrow'),
-  // getModel('rect', 'rect'),
-  // getModel('ellipse', 'ellipse'),
+  getModel('rect', 'rect'),
+  getModel('ellipse', 'ellipse'),
   // getModel('eraser', 'eraser'),
 ]
 

@@ -7,7 +7,7 @@ export interface EventMap {
   committed: () => void
 }
 
-export type DrawingMode = 'line'
+export type DrawingMode = 'line' | 'rect' | 'ellipse' | 'draw'
 // 'draw' | 'pen' | 'line' | 'ellipse' | 'rect' | 'eraser' | 'arrow'
 
 export interface Brush {
@@ -26,5 +26,5 @@ export interface Options {
 export interface Point {
   x: number
   y: number
-  pressure: number
+  pressure?: number
 }

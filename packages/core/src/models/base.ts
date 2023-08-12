@@ -56,7 +56,7 @@ export abstract class BaseModel<T extends SVGElement> {
         }
       : this.brush
 
-    el.setAttribute('fill', brush.fill ?? 'transport')
+    el.setAttribute('fill', brush.fill ?? 'transparent')
     el.setAttribute('stroke.width', brush.size!)
     el.setAttribute('stroke', brush.color!)
     el.setAttribute('stroke-linecap', 'round')
