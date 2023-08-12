@@ -8,7 +8,6 @@ export interface EventMap {
 }
 
 export type DrawingMode = 'line' | 'rect' | 'ellipse' | 'draw' | 'eraser'
-// 'draw' | 'pen' | 'line' | 'ellipse' | 'rect' | 'eraser' | 'arrow'
 
 export interface Brush {
   mode: DrawingMode
