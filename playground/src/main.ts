@@ -19,6 +19,21 @@ document.getElementById('clear')?.addEventListener('click', () => {
   board.clear()
 })
 
+document.getElementById('downloads')?.addEventListener('click', () => {
+  board.el!.setAttribute('xmlns', 'http://www.w3.org/2000/svg')
+  const data = board.el?.outerHTML || ''
+  console.log(data)
+  const blob = new Blob([data], {type: 'image/svg+xml'})
+  const url = URL.createObjectURL(blob)
+  const link = document.createElement('a')
+  link.href=url
+  link.download = 'custom.svg'
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+})
+
+
 interface ModelResult {
   el: HTMLElement
   brush: Brush
