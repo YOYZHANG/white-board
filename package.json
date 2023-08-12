@@ -1,7 +1,6 @@
 {
   "name": "white-board",
   "version": "1.0.0",
-  "private": true,
   "scripts": {
     "play:dev": "pnpm -C playground run dev --open",
     "play:build": "pnpm -C playground run build",
