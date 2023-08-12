@@ -92,7 +92,6 @@ export default class DrawModel extends BaseModel<SVGPathElement> {
     this.el = this.createSVGElement('path')
 
     this.points.push(point)
-    console.log('onstart', point)
     return this.el
   }
 
@@ -125,8 +124,6 @@ export default class DrawModel extends BaseModel<SVGPathElement> {
     if (!path.getTotalLength())
       return false
 
-    // path.setAttribute('d', toSvgData(simplify(this.points)))
-    console.log('onend', point)
     return true
   }
 }

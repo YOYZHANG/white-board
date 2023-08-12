@@ -10,7 +10,6 @@ export default class LineModel extends BaseModel<SVGLineElement> {
     el.setAttribute('x2', `${point.x}`)
     el.setAttribute('y2', `${point.y}`)
 
-    console.log('onstart', point)
     return this.el = el
   }
 
@@ -22,8 +21,6 @@ export default class LineModel extends BaseModel<SVGLineElement> {
     this.el.setAttribute('y1', `${this.start.y}`)
     this.el.setAttribute('x2', `${point.x}`)
     this.el.setAttribute('y2', `${point.y}`)
-
-    console.log('onmove', point)
   }
 
   override onEnd(point: Point) {
@@ -36,7 +33,6 @@ export default class LineModel extends BaseModel<SVGLineElement> {
     if (path.getTotalLength() < 5)
       return false
 
-    console.log('onend', point)
     return true
   }
 }

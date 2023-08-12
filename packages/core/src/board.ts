@@ -3,6 +3,7 @@ import { createNanoEvents } from 'nanoevents'
 import type { Brush, DrawingMode, EventMap, Options } from './types'
 import { createModels } from './models'
 import type { BaseModel } from './models/base'
+import type EraserModel from './models/eraser'
 
 function selectSelector(el: string | SVGAElement): SVGAElement | null {
   if (typeof el === 'string')
@@ -18,6 +19,7 @@ export class Board {
   public brush: Brush = { mode: 'line', color: 'black', size: '3' }
   private removable: (() => void)[] = []
   private models: Record<DrawingMode, BaseModel<SVGElement>>
+  private editStack: Element[] = []
   constructor(options: Options) {
     this.emitter = createNanoEvents()
 
@@ -35,11 +37,13 @@ export class Board {
   }
 
   get mode() {
-    return this.brush.mode || 'line'
+    return this.brush.mode
   }
 
   set mode(v: DrawingMode) {
     this.brush.mode = v
+    if (v === 'eraser')
+      (this.model as EraserModel).onSelect(this.el!)
   }
 
   on<T extends keyof EventMap>(type: T, fn: EventMap[T]) {
@@ -80,6 +84,32 @@ export class Board {
 
   unmount() {
     this.removable.forEach(fn => fn())
+  }
+
+  clear() {
+    this.cancel()
+    this.editStack.length = 0
+    this.el!.innerHTML = ''
+  }
+
+  undo() {
+    const el = this.el!.lastElementChild
+
+    if (el) {
+      this.editStack.push((el as any).cloneNode(true))
+      el.remove()
+    }
+
+    return true
+  }
+
+  redo() {
+    const el = this.editStack.pop()
+
+    if (el)
+      this.el?.appendChild(el)
+
+    return true
   }
 
   private eventStart(e: PointerEvent) {

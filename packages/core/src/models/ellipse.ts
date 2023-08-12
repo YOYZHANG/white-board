@@ -8,7 +8,6 @@ export default class EllipseModel extends BaseModel<SVGEllipseElement> {
     el.setAttribute('cx', `${point.x}`)
     el.setAttribute('cy', `${point.y}`)
 
-    console.log('onstart', point)
     return this.el = el
   }
 
@@ -44,7 +43,6 @@ export default class EllipseModel extends BaseModel<SVGEllipseElement> {
     if (!path.getTotalLength())
       return false
 
-    console.log('onend', point)
     return true
   }
 }

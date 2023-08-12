@@ -8,7 +8,6 @@ export default class RectModel extends BaseModel<SVGRectElement> {
     el.setAttribute('x', `${point.x}`)
     el.setAttribute('y', `${point.y}`)
 
-    console.log('onstart', point)
     return this.el = el
   }
 
@@ -41,7 +40,6 @@ export default class RectModel extends BaseModel<SVGRectElement> {
     if (!path.getTotalLength())
       return false
 
-    console.log('onend', point)
     return true
   }
 }

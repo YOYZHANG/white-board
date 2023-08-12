@@ -18,6 +18,7 @@
   "files": ["dist"],
   "scripts": {
     "dev": "npm run build --watch",
-    "build": "tsup src/index.ts --format esm,cjs,iife --dts --clean"
+    "build": "tsup src/index.ts --format esm,cjs,iife --dts --clean",
+    "release": "pnpm -r publish --access public"
   }
 }

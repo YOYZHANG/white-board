@@ -9,9 +9,15 @@ window.addEventListener('keydown', (e) => {
   // todo
 })
 
-document.getElementById('undo')?.addEventListener('click', () => {})
-document.getElementById('redo')?.addEventListener('click', () => {})
-document.getElementById('clear')?.addEventListener('click', () => {})
+document.getElementById('undo')?.addEventListener('click', () => {
+  board.undo()
+})
+document.getElementById('redo')?.addEventListener('click', () => {
+  board.redo()
+})
+document.getElementById('clear')?.addEventListener('click', () => {
+  board.clear()
+})
 
 interface ModelResult {
   el: HTMLElement
@@ -28,17 +34,16 @@ function getModel(id: string, mode: DrawingMode, arrowEnd = false): ModelResult 
 }
 const models = [
   getModel('draw', 'draw'),
-  // getModel('pen', 'pen'),
   getModel('line', 'line'),
   // getModel('arrow', 'arrow'),
   getModel('rect', 'rect'),
   getModel('ellipse', 'ellipse'),
-  // getModel('eraser', 'eraser'),
+  getModel('eraser', 'eraser'),
 ]
 
 models.forEach(({ el, brush }) => {
   el.addEventListener('click', () => {
     el.classList.add('active')
-    board.brush.mode = brush.mode!
+    board.mode = brush.mode
   })
 })

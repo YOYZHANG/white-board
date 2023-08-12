@@ -5,6 +5,7 @@ import LineModel from './line'
 import RectModel from './rect'
 import EllipseModel from './ellipse'
 import DrawModel from './draw'
+import EraserModel from './eraser'
 
 export function createModels(board: Board): Record<DrawingMode, BaseModel<SVGElement>> {
   return {
@@ -12,5 +13,6 @@ export function createModels(board: Board): Record<DrawingMode, BaseModel<SVGEle
     rect: new RectModel(board),
     ellipse: new EllipseModel(board),
     draw: new DrawModel(board),
+    eraser: new EraserModel(board),
   }
 }

@@ -61,7 +61,6 @@ export abstract class BaseModel<T extends SVGElement> {
     el.setAttribute('stroke', brush.color!)
     el.setAttribute('stroke-linecap', 'round')
 
-    console.log('createSVGElement', el)
     return el
   }
 }

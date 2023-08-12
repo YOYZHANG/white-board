@@ -7,11 +7,11 @@ export interface EventMap {
   committed: () => void
 }
 
-export type DrawingMode = 'line' | 'rect' | 'ellipse' | 'draw'
+export type DrawingMode = 'line' | 'rect' | 'ellipse' | 'draw' | 'eraser'
 // 'draw' | 'pen' | 'line' | 'ellipse' | 'rect' | 'eraser' | 'arrow'
 
 export interface Brush {
-  mode?: DrawingMode
+  mode: DrawingMode
   color?: string
   arrowEnd?: boolean
   fill?: string
