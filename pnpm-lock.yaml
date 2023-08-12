@@ -33,8 +33,6 @@ importers:
         specifier: ^4.3.9
         version: 4.3.9
 
-  packages/board: {}
-
   packages/core:
     devDependencies:
       nanoevents:
@@ -47,7 +45,7 @@ importers:
   playground:
     dependencies:
       '@fycosmos/board':
-        specifier: workspace:1.0.1
+        specifier: 1.0.1
         version: link:../packages/core
     devDependencies:
       pnpm:
