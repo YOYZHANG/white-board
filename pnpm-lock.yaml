@@ -45,7 +45,7 @@ importers:
   playground:
     dependencies:
       '@fycosmos/board':
-        specifier: 1.0.1
+        specifier: ^1.0.1
         version: link:../packages/core
     devDependencies:
       pnpm:

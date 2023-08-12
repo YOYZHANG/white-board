@@ -18,7 +18,10 @@
     "noImplicitReturns": true,
     "noPropertyAccessFromIndexSignature": true,
     "noUncheckedIndexedAccess": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "paths": {
+      "board": ["./packages/core/src/index.ts"]
+    }
   },
   "exclude": ["**/dist", "node_modules"]
 }
