@@ -7,7 +7,8 @@
     "play:build": "pnpm -C playground run build",
     "board:dev": "pnpm run -r --parallel --filter=./packages/* dev",
     "board:build": "pnpm run -r --filter=./packages/* build",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "release": "pnpm -r publish --access public"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.4",
