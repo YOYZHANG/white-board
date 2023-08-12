@@ -6,9 +6,6 @@
     "dev": "vite --port 3333 --open",
     "build": "NODE_ENV=production vite build"
   },
-  "dependencies": {
-    "@fycosmos/board": "^1.0.1"
-  },
   "devDependencies": {
     "pnpm": "8.6.12",
     "unocss": "^0.53.0",
