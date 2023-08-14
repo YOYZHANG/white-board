@@ -1,4 +1,7 @@
 import 'uno.css'
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 import { createBoard } from '@fycosmos/board'
 import type { Brush, DrawingMode } from '../../packages/core/src/types'
 
@@ -22,17 +25,15 @@ document.getElementById('clear')?.addEventListener('click', () => {
 document.getElementById('downloads')?.addEventListener('click', () => {
   board.el!.setAttribute('xmlns', 'http://www.w3.org/2000/svg')
   const data = board.el?.outerHTML || ''
-  console.log(data)
-  const blob = new Blob([data], {type: 'image/svg+xml'})
+  const blob = new Blob([data], { type: 'image/svg+xml' })
   const url = URL.createObjectURL(blob)
   const link = document.createElement('a')
-  link.href=url
+  link.href = url
   link.download = 'custom.svg'
   document.body.appendChild(link)
   link.click()
   document.body.removeChild(link)
 })
-
 
 interface ModelResult {
   el: HTMLElement

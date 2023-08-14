@@ -12,19 +12,20 @@
       margin: 0;
       padding: 0;
     }
+
+    .toolbar {
+      box-shadow: 0px 0px 1px 2px rgba(0,0,0,.01), 4px 4px 5px 0px rgba(0,0,0,.15);
+    }
+
   </style>
   <body>
     <div id="app" class="w-screen h-screen">
       <div class="h-screen">
-        <h1><a href="" >WhiteBoard</a></h1>
-
-        <div>
-          <button id="undo" aria-label="Undo" title="undo">↩</button>
+        <div class="toolbar flex flex-wrap justify-center content-center w-xl m-auto mt p-1 b-rd" >
+          <button id="undo" aria-label="Undo" title="undo" class="icon-btn">↩</button>
           <button id="redo" aria-label="Redo" title="redo">↪</button>
           <button id="clear" aria-label="clear" title="clear">🗑</button>
-        </div>
 
-        <div>
           <button id="draw" aria-label="draw" title="draw">✏</button>
           <button id="pen" aria-label="pen" title="pen">✒</button>
           <button id="line" aria-label="line" title="line">/</button>
