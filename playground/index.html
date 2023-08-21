@@ -22,28 +22,20 @@
     <div id="app" class="w-screen h-screen">
       <div class="h-screen">
         <div class="toolbar flex flex-wrap justify-center content-center w-xl m-auto mt p-1 b-rd" >
-          <button id="undo" aria-label="Undo" title="undo" class="icon-btn">↩</button>
-          <button id="redo" aria-label="Redo" title="redo">↪</button>
-          <button id="clear" aria-label="clear" title="clear">🗑</button>
-
-          <button id="draw" aria-label="draw" title="draw">✏</button>
-          <button id="pen" aria-label="pen" title="pen">✒</button>
-          <button id="line" aria-label="line" title="line">/</button>
-          <button id="arrow" aria-label="arrow" title="arrow">↗</button>
-          <button id="rect" aria-label="rect" title="rect">⃞</button>
-          <button id="ellipse" aria-label="ellipse" title="ellipse">⭕</button>
-          <button id="eraser" aria-label="eraser" title="eraser">🧹</button>
+          <button id="undo" aria-label="Undo" title="undo" class="icon-btn undo"></button>
+          <button id="redo" aria-label="Redo" title="redo" class="icon-btn redo"></button>
+          <button id="clear" aria-label="clear" title="clear" class="icon-btn clear"></button>
+          <div class="color-coolgray w-0.1 m-2 inline-block bg-coolGray"> </div>
+          <button id="draw" aria-label="draw" title="draw" class="icon-btn pen"></button>
+          <button id="line" aria-label="line" title="line" class="icon-btn line"></button>
+          <button id="rect" aria-label="rect" title="rect" class="icon-btn rect"></button>
+          <button id="ellipse" aria-label="ellipse" title="ellipse" class="icon-btn circle"></button>
+          <button id="eraser" aria-label="eraser" title="eraser" class="icon-btn erase"></button>
+          <div class="color-coolgray w-0.1 m-2 inline-block bg-coolGray"> </div>
+          <button id="downloads" title="Downloads" class="icon-btn print"></button>
         </div>
-
-        <div>
-          <button id="downloads" title="Downloads">📥</button>
-        </div>
-
-        <svg id="svg" class="w-full h-full z-10"></svg>
-
-
       </div>
-      <svg></svg>
+      <svg id="svg" class="fixed w-screen h-screen"></svg>
     </div>
     <script type="module" src="./src/main.ts"></script>
   </body>
