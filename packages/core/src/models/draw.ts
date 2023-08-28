@@ -90,8 +90,9 @@ export default class DrawModel extends BaseModel<SVGPathElement> {
   private count = 0
   override onStart(point: Point): SVGPathElement {
     this.el = this.createSVGElement('path')
-
+    this.elMap.set(this.el, this)
     this.points.push(point)
+
     return this.el
   }
 
@@ -121,8 +122,10 @@ export default class DrawModel extends BaseModel<SVGPathElement> {
     if (!path)
       return false
 
-    if (!path.getTotalLength())
+    if (!path.getTotalLength()) {
+      this.elMap.delete(this.el!)
       return false
+    }
 
     return true
   }

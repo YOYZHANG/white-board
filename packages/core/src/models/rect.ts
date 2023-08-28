@@ -1,3 +1,4 @@
+import { createCircleElement } from '../operators/circle'
 import type { Point } from '../types'
 import { BaseModel } from './base'
 
@@ -40,6 +41,28 @@ export default class RectModel extends BaseModel<SVGRectElement> {
     if (!path.getTotalLength())
       return false
 
+    this.elMap.set(path, this)
     return true
+  }
+
+  override onSelect(el: SVGRectElement): void {
+    const { x, y, width, height } = el.getBBox()
+    // 需要绘制圆
+    const c1 = createCircleElement({ x, y })
+    const c2 = createCircleElement({ x: x + width, y })
+    const c3 = createCircleElement({ x, y: y + height })
+    const c4 = createCircleElement({ x: x + width, y: y + height })
+
+    const g = document.createElementNS('http://www.w3.org/2000/svg', 'g')
+    g.append(c1)
+    g.append(c2)
+    g.append(c3)
+    g.append(c4)
+
+    el.parentNode!.insertBefore(g, el.nextSibling)
+  }
+
+  onDrag(point: Point): void {
+
   }
 }

@@ -16,6 +16,7 @@ export default defineConfig({
     ['line', 'i-carbon-arrow-down-right'],
     ['rect', 'i-carbon-3d-cursor'],
     ['print', 'i-ri-printer-line'],
+    ['select', 'i-carbon-select-window'],
   ],
   presets: [
     presetUno(),

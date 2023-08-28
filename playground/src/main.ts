@@ -51,13 +51,14 @@ function getModel(id: string, mode: DrawingMode, arrowEnd = false): ModelResult 
 const models = [
   getModel('draw', 'draw'),
   getModel('line', 'line'),
-  // getModel('arrow', 'arrow'),
+  getModel('select', 'select'),
   getModel('rect', 'rect'),
   getModel('ellipse', 'ellipse'),
   getModel('eraser', 'eraser'),
 ]
 
 models.forEach(({ el, brush }) => {
+  console.log(el, 'el')
   el.addEventListener('click', () => {
     el.classList.add('active')
     board.mode = brush.mode

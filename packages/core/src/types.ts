@@ -7,7 +7,7 @@ export interface EventMap {
   committed: () => void
 }
 
-export type DrawingMode = 'line' | 'rect' | 'ellipse' | 'draw' | 'eraser'
+export type DrawingMode = 'line' | 'rect' | 'ellipse' | 'draw' | 'eraser' | 'select'
 
 export interface Brush {
   mode: DrawingMode
@@ -15,6 +15,7 @@ export interface Brush {
   arrowEnd?: boolean
   fill?: string
   size?: string
+  stroke?: string
 }
 
 export interface Options {
@@ -26,4 +27,12 @@ export interface Point {
   x: number
   y: number
   pressure?: number
+}
+
+export interface Fragment {
+  x1: number
+  x2: number
+  y1: number
+  y2: number
+  element: SVGGeometryElement
 }

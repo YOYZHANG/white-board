@@ -20,6 +20,7 @@ export class Board {
   private removable: (() => void)[] = []
   private models: Record<DrawingMode, BaseModel<SVGElement>>
   private editStack: Element[] = []
+  public elMap: WeakMap<any, any> = new WeakMap()
   constructor(options: Options) {
     this.emitter = createNanoEvents()
 
@@ -42,8 +43,8 @@ export class Board {
 
   set mode(v: DrawingMode) {
     this.brush.mode = v
-    if (v === 'eraser')
-      (this.model as EraserModel).onSelect(this.el!)
+    if (v === 'eraser' || v === 'select')
+      (this.model as EraserModel).preCollect(this.el!)
   }
 
   on<T extends keyof EventMap>(type: T, fn: EventMap[T]) {

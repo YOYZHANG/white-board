@@ -26,6 +26,7 @@
           <button id="redo" aria-label="Redo" title="redo" class="icon-btn redo"></button>
           <button id="clear" aria-label="clear" title="clear" class="icon-btn clear"></button>
           <div class="color-coolgray w-0.1 m-2 inline-block bg-coolGray"> </div>
+          <button id="select" aria-label="select" title="select" class="icon-btn select"></button>
           <button id="draw" aria-label="draw" title="draw" class="icon-btn pen"></button>
           <button id="line" aria-label="line" title="line" class="icon-btn line"></button>
           <button id="rect" aria-label="rect" title="rect" class="icon-btn rect"></button>
@@ -34,8 +35,9 @@
           <div class="color-coolgray w-0.1 m-2 inline-block bg-coolGray"> </div>
           <button id="downloads" title="Downloads" class="icon-btn print"></button>
         </div>
+
+        <svg id="svg" class="fixed w-full h-full"></svg>
       </div>
-      <svg id="svg" class="fixed w-screen h-screen"></svg>
     </div>
     <script type="module" src="./src/main.ts"></script>
   </body>

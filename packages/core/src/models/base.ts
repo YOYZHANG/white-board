@@ -4,17 +4,21 @@ import type { Brush, Point } from '../types'
 export abstract class BaseModel<T extends SVGElement> {
   protected el: T | null = null
 
-  private containerEl: SVGElement
-  private brush: Brush
+  protected containerEl: SVGElement
+  protected brush: Brush
   protected start!: Point
+  protected elMap: WeakMap<any, any> = new WeakMap()
   constructor(board: Board) {
     this.containerEl = board.el!
     this.brush = board.brush
+    this.elMap = board.elMap
   }
 
   onStart(point: Point): T | null {
     return null
   }
+
+  onSelect(el: T) {}
 
   onMove(point: Point) {}
   onEnd(point: Point): boolean {

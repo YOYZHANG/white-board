@@ -5,6 +5,8 @@ export default class EllipseModel extends BaseModel<SVGEllipseElement> {
   override onStart(point: Point): SVGEllipseElement {
     const el = this.createSVGElement('ellipse')
 
+    this.elMap.set(el, this)
+
     el.setAttribute('cx', `${point.x}`)
     el.setAttribute('cy', `${point.y}`)
 
@@ -40,8 +42,10 @@ export default class EllipseModel extends BaseModel<SVGEllipseElement> {
     if (!path)
       return false
 
-    if (!path.getTotalLength())
+    if (!path.getTotalLength()) {
+      this.elMap.delete(this.el!)
       return false
+    }
 
     return true
   }
